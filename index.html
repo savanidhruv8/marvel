@@ -149,71 +149,15 @@ h1,h2,h3{font-family:"Noto Serif Gujarati",serif;line-height:1.25;margin:0}
 }
 
 /* DAILY AARTI BANNER */
-.aarti-banner {
-  background: linear-gradient(135deg, #fff7ea 0%, #fff1d6 100%);
-  border-bottom: 2px solid var(--line);
-  padding: 24px 0;
-  box-shadow: 0 4px 15px rgba(116, 31, 34, 0.05);
-}
-.aarti-banner-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-  flex-wrap: wrap;
-  background: #ffffff;
-  padding: 18px 28px;
-  border-radius: 14px;
-  border: 1px solid #ebd4b3;
-  box-shadow: var(--shadow);
-}
-.aarti-title-group {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-.aarti-icon-badge {
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--maroon), var(--saffron-dark));
-  color: var(--gold-light);
-  display: grid;
-  place-items: center;
-  font-size: 1.5rem;
-  box-shadow: 0 4px 12px rgba(116, 31, 34, 0.2);
-}
-.aarti-text h3 {
-  color: var(--maroon);
-  font-size: 1.25rem;
-  margin: 0 0 2px;
-}
-.aarti-text p {
-  margin: 0;
-  color: var(--muted);
-  font-size: 0.9rem;
-}
-.aarti-times {
-  display: flex;
-  gap: 14px;
-  flex-wrap: wrap;
-}
-.time-pill {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  background: #fff8eb;
-  border: 1px solid var(--gold);
-  padding: 8px 16px;
-  border-radius: 30px;
-  color: var(--maroon);
-  font-weight: 700;
-  font-size: 0.95rem;
-}
-.time-pill span {
-  color: var(--saffron-dark);
-  font-weight: 800;
-}
+
+
+
+
+
+
+
+
+
 
 /* EVENTS SECTION */
 .section{padding:70px 0 80px}
@@ -896,11 +840,7 @@ h1,h2,h3{font-family:"Noto Serif Gujarati",serif;line-height:1.25;margin:0}
   }
   .date-box strong{font-size: 2rem; display: inline;}
   .date-box span{display: inline; margin-top: 0;}
-  .aarti-banner-inner{flex-direction: column; text-align: center; justify-content: center;}
-  .aarti-title-group{flex-direction: column; text-align: center;}
-  .footer-top{flex-direction: column; text-align: center;}
-  .footer-invite{text-align: center;}
-}
+  
 
 
 /* MOBILE-FIRST IMPROVEMENTS */
@@ -913,40 +853,7 @@ h1,h2,h3{font-family:"Noto Serif Gujarati",serif;line-height:1.25;margin:0}
   .hero-line{margin:12px auto 18px}
   .primary-btn{height:48px;padding:0 22px;font-size:.98rem;width:100%;max-width:320px}
 
-  .aarti-banner{padding:16px 0}
-  .aarti-banner-inner{padding:16px;border-radius:12px;gap:14px}
-  .aarti-title-group{gap:10px}
-  .aarti-icon-badge{width:46px;height:46px;font-size:1.3rem}
-  .aarti-text h3{font-size:1.08rem}
-  .aarti-text p{font-size:.84rem}
-  .aarti-times{width:100%;gap:8px}
-  .time-pill{width:100%;justify-content:center;text-align:center;padding:9px 12px;font-size:.88rem}
-
-  .section{padding:44px 0 54px}
-  .section-heading{margin-bottom:24px}
-  .section-heading h2{font-size:1.8rem}
-  .section-heading>p:last-child{font-size:.92rem}
-
-  .filter-container{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:24px}
-  .filter-btn{padding:9px 10px;font-size:.82rem;line-height:1.35}
-
-  .timeline{gap:14px}
-  .event-card{grid-template-columns:1fr;gap:10px;padding:16px;border-radius:12px}
-  .date-box{display:flex;align-items:baseline;gap:8px;border-right:0;border-bottom:1px solid var(--line);padding:0 0 10px;text-align:left}
-  .date-box strong{font-size:2rem;line-height:1}
-  .date-box span{font-size:.9rem;margin:0}
-  .event-kicker{font-size:.75rem}
-  .event-content h3{font-size:1.28rem;line-height:1.35}
-  .event-content p{font-size:.9rem;margin:5px 0 7px}
-  .performer{font-size:.82rem!important}
-  .time-badge{display:flex;width:100%;font-size:.9rem;line-height:1.45;padding:7px 10px;border-radius:8px}
-  .event-card.featured::before{font-size:.66rem;padding:3px 10px}
-
-  .site-footer{padding:36px 0 24px}
-  .footer-brand{flex-direction:column;text-align:center;gap:10px}
-  .footer-bottom{flex-direction:column;text-align:center;gap:8px}
-  .footer-bottom p{font-size:.82rem}
-}
+  
 
 @media(max-width:420px){
   .container{width:calc(100% - 20px)}
@@ -982,28 +889,6 @@ h1,h2,h3{font-family:"Noto Serif Gujarati",serif;line-height:1.25;margin:0}
       </div>
     </section>
 
-    <!-- DAILY AARTI BANNER -->
-    <div class="aarti-banner">
-      <div class="container">
-        <div class="aarti-banner-inner">
-          <div class="aarti-title-group">
-            <div class="aarti-icon-badge">🪔</div>
-            <div class="aarti-text">
-              <h3>નિત્ય ગણપતિ બાપ્પાની મહા આરતી</h3>
-              <p>ઉત્સવના તમામ ૧૩ દિવસો દરમિયાન દરરોજ બે ટાઇમ આરતી દર્શન</p>
-            </div>
-          </div>
-          <div class="aarti-times">
-            <div class="time-pill">
-              🌅 સવારની આરતી: <span>સવારે ૮:૦૦ વાગ્યે</span>
-            </div>
-            <div class="time-pill">
-              🌆 સાંજની આરતી: <span>સાંજે ૭:૦૦ વાગ્યે</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
 
 
 <!-- EVENTS TIMELINE SECTION -->
