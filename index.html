@@ -1,0 +1,742 @@
+<!doctype html>
+<html lang="gu">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#741f22">
+  <title>માર્વેલ લક્ઝરિયા ગણેશોત્સવ</title>
+  <meta name="description" content="માર્વેલ લક્ઝરિયા ગણેશોત્સવ — ૧૩ દિવસના તમામ ધાર્મિક અને સાંસ્કૃતિક કાર્યક્રમોની સંપુર્ણ માહિતી.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Gujarati:wght@400;500;600;700;800&family=Noto+Serif+Gujarati:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+:root{
+  --cream:#fffaf2;
+  --paper:#fffdf9;
+  --saffron:#d96a20;
+  --saffron-dark:#b84e12;
+  --saffron-bright:#ff7d26;
+  --maroon:#741f22;
+  --maroon-dark:#4a0f12;
+  --maroon-light:#922b2f;
+  --gold:#d4af37;
+  --gold-light:#f9e596;
+  --ink:#2e2723;
+  --muted:#6f6660;
+  --line:#eadfce;
+  --shadow:0 10px 30px rgba(94,55,25,.08);
+  --shadow-lg:0 15px 40px rgba(74,15,18,.15);
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:"Noto Sans Gujarati",sans-serif;line-height:1.7}
+a{color:inherit;text-decoration:none}
+.container{width:min(1080px,calc(100% - 32px));margin:auto}
+
+/* HERO SECTION WITH LORD GANESHA BACKGROUND */
+.hero{
+  position:relative;
+  overflow:hidden;
+  text-align:center;
+  padding:80px 0 90px;
+  background: radial-gradient(circle at 50% 30%, #8a2529 0%, #5c1417 60%, #3b090c 100%);
+  color: #fff8ee;
+  box-shadow: inset 0 -10px 30px rgba(0,0,0,0.3);
+}
+
+/* Background Mandala & Patterns */
+.hero-pattern{
+  position:absolute;
+  inset:0;
+  opacity:.18;
+  background-image: 
+    radial-gradient(circle at 50% 50%, var(--gold) 0%, transparent 60%),
+    radial-gradient(circle at 15% 25%, rgba(212,175,55,.3) 0 2px, transparent 3px),
+    radial-gradient(circle at 85% 75%, rgba(217,106,32,.3) 0 2px, transparent 3px);
+  background-size:100% 100%, 42px 42px, 55px 55px;
+}
+
+.hero-glow {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 420px;
+  height: 420px;
+  background: radial-gradient(circle, rgba(255, 175, 55, 0.35) 0%, rgba(217, 106, 32, 0.15) 50%, transparent 75%);
+  border-radius: 50%;
+  filter: blur(40px);
+  pointer-events: none;
+  animation: pulse-glow 4s ease-in-out infinite alternate;
+}
+
+@keyframes pulse-glow {
+  0% { transform: translate(-50%, -50%) scale(0.95); opacity: 0.7; }
+  100% { transform: translate(-50%, -50%) scale(1.1); opacity: 1; }
+}
+
+
+
+.hero-inner{position:relative; z-index: 3;}
+.invocation{
+  margin:0 0 10px;
+  color:var(--gold-light);
+  font-family:"Noto Serif Gujarati",serif;
+  font-size:1.25rem;
+  font-weight:700;
+  letter-spacing: 2px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.hero-line{
+  width:80px;
+  height:3px;
+  background:linear-gradient(90deg, transparent, var(--gold), transparent);
+  margin:14px auto 22px;
+}
+
+h1,h2,h3{font-family:"Noto Serif Gujarati",serif;line-height:1.25;margin:0}
+.hero h1{
+  font-size:clamp(2.4rem,7.5vw,4.8rem);
+  font-weight:800;
+  color: #ffffff;
+  text-shadow: 0 4px 12px rgba(0,0,0,0.6);
+}
+.hero h1 span{
+  background: linear-gradient(180deg, #ffe082 0%, #ffab40 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.hero-subtitle{
+  font-size:clamp(1.05rem,2.8vw,1.35rem);
+  margin:18px auto 32px;
+  color:#fbe4d5;
+  font-weight:500;
+  max-width: 650px;
+}
+
+.primary-btn{
+  display:inline-flex;
+  width:max-content;
+  margin:0 auto;
+  height:52px;
+  align-items:center;
+  justify-content:center;
+  gap: 8px;
+  border:2px solid var(--gold);
+  border-radius:30px;
+  padding:0 32px;
+  font-family:"Noto Sans Gujarati",sans-serif;
+  font-size:1.05rem;
+  font-weight:700;
+  color:#ffffff;
+  background:linear-gradient(110deg,#b84e12 0%,#e1812f 50%,#b84e12 100%);
+  background-size:200% 100%;
+  box-shadow:0 8px 25px rgba(0,0,0,0.35);
+  animation:background-shine 3s linear infinite;
+  transition:all .3s ease;
+  cursor: pointer;
+}
+.primary-btn:hover{
+  border-color:#ffffff;
+  transform:translateY(-3px) scale(1.02);
+  box-shadow:0 12px 30px rgba(217, 106, 32, 0.4);
+}
+@keyframes background-shine{
+  0%{background-position:200% 0}
+  100%{background-position:-200% 0}
+}
+
+/* DAILY AARTI BANNER */
+.aarti-banner {
+  background: linear-gradient(135deg, #fff7ea 0%, #fff1d6 100%);
+  border-bottom: 2px solid var(--line);
+  padding: 24px 0;
+  box-shadow: 0 4px 15px rgba(116, 31, 34, 0.05);
+}
+.aarti-banner-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  background: #ffffff;
+  padding: 18px 28px;
+  border-radius: 14px;
+  border: 1px solid #ebd4b3;
+  box-shadow: var(--shadow);
+}
+.aarti-title-group {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.aarti-icon-badge {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--maroon), var(--saffron-dark));
+  color: var(--gold-light);
+  display: grid;
+  place-items: center;
+  font-size: 1.5rem;
+  box-shadow: 0 4px 12px rgba(116, 31, 34, 0.2);
+}
+.aarti-text h3 {
+  color: var(--maroon);
+  font-size: 1.25rem;
+  margin: 0 0 2px;
+}
+.aarti-text p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+.aarti-times {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.time-pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #fff8eb;
+  border: 1px solid var(--gold);
+  padding: 8px 16px;
+  border-radius: 30px;
+  color: var(--maroon);
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+.time-pill span {
+  color: var(--saffron-dark);
+  font-weight: 800;
+}
+
+/* EVENTS SECTION */
+.section{padding:70px 0 80px}
+.events{background:var(--paper)}
+.section-heading{text-align:center;max-width:750px;margin:0 auto 36px}
+.eyebrow{margin:0 0 8px;color:var(--saffron-dark);font-size:.88rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase}
+.section-heading h2{font-size:clamp(1.9rem,4vw,2.8rem);color:var(--maroon)}
+.section-heading>p:last-child{color:var(--muted);margin:10px 0 0;font-size:1.05rem}
+
+/* FILTER TABS */
+.filter-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 36px;
+  flex-wrap: wrap;
+}
+.filter-btn {
+  background: #ffffff;
+  border: 1px solid var(--line);
+  padding: 8px 20px;
+  border-radius: 25px;
+  font-family: "Noto Sans Gujarati", sans-serif;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--ink);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.filter-btn:hover {
+  border-color: var(--saffron);
+  color: var(--saffron-dark);
+}
+.filter-btn.active {
+  background: var(--maroon);
+  color: #ffffff;
+  border-color: var(--maroon);
+  box-shadow: 0 4px 12px rgba(116, 31, 34, 0.2);
+}
+
+/* TIMELINE GRID */
+.timeline{
+  max-width:860px;
+  margin:auto;
+  display:grid;
+  gap:18px;
+}
+
+.event-card{
+  display:grid;
+  grid-template-columns:130px 1fr;
+  gap:24px;
+  align-items:center;
+  background:#ffffff;
+  border:1px solid var(--line);
+  border-radius:14px;
+  padding:22px 26px;
+  box-shadow:var(--shadow);
+  opacity:0;
+  transform:translateY(18px);
+  transition:opacity .5s ease, transform .5s ease, border-color .2s ease, box-shadow .2s ease;
+  position: relative;
+  overflow: hidden;
+}
+.event-card.show{opacity:1;transform:none}
+.event-card:hover{
+  border-color:var(--gold);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Featured Highlights */
+.event-card.featured{
+  border: 2px solid var(--gold);
+  background: linear-gradient(135deg, #ffffff 0%, #fffbf2 100%);
+}
+.event-card.featured::before {
+  content: 'ખાસ આકર્ષણ';
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: linear-gradient(135deg, var(--saffron-dark), var(--maroon));
+  color: var(--gold-light);
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 4px 14px;
+  border-bottom-left-radius: 10px;
+}
+
+/* Break Days */
+.event-card.break-day {
+  background: #fdfbf7;
+  border-style: dashed;
+}
+.event-card.break-day .date-box {
+  opacity: 0.8;
+}
+
+.date-box{
+  border-right:2px solid var(--line);
+  padding-right:20px;
+  text-align:center;
+  color:var(--maroon);
+}
+.date-box strong{
+  display:block;
+  font-family:"Noto Serif Gujarati",serif;
+  font-size:2.8rem;
+  line-height:1;
+  font-weight:800;
+  color: var(--maroon);
+}
+.date-box span{
+  font-size:.95rem;
+  font-weight:700;
+  color:var(--saffron-dark);
+  display: block;
+  margin-top: 2px;
+}
+
+.event-kicker{
+  margin:0 0 4px;
+  font-size:.82rem;
+  color:var(--saffron-dark);
+  font-weight:800;
+  letter-spacing: 0.02em;
+}
+.event-content h3{
+  font-size:1.5rem;
+  color: var(--maroon);
+  margin-bottom: 4px;
+}
+.event-content p{
+  margin:4px 0 8px;
+  color:var(--muted);
+  font-size: 0.98rem;
+}
+.event-content .performer{
+  display:inline-block;
+  margin-top:4px;
+  padding:4px 14px;
+  border-radius:999px;
+  background:#f8e5c9;
+  color:var(--maroon-dark);
+  font-weight:800;
+  font-size: 0.88rem;
+  border: 1px solid #ecc999;
+}
+.time-badge{
+  display:inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-top:6px;
+  color:var(--maroon);
+  font-weight:800;
+  font-size:1.02rem;
+  background: #fff5e6;
+  padding: 4px 12px;
+  border-radius: 6px;
+}
+
+/* FOOTER */
+.site-footer{
+  background: linear-gradient(180deg, var(--maroon) 0%, var(--maroon-dark) 100%);
+  color:#fff7ed;
+  padding:50px 0 30px;
+  border-top: 3px solid var(--gold);
+}
+.footer-content{max-width:900px}
+.footer-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:30px;
+  flex-wrap: wrap;
+}
+.footer-brand{
+  display:flex;
+  align-items:center;
+  gap:16px;
+}
+.footer-mark{
+  width:54px;
+  height:54px;
+  display:grid;
+  place-items:center;
+  border:2px solid var(--gold);
+  border-radius:50%;
+  color:var(--gold-light);
+  font-family:"Noto Serif Gujarati",serif;
+  font-size:1.75rem;
+  background: rgba(0,0,0,0.2);
+}
+.footer-brand h2{
+  color:#fff7ed;
+  font-size:1.35rem;
+  margin:0;
+}
+.footer-brand p{
+  margin:3px 0 0;
+  color:#e8cdbd;
+  font-size:.92rem;
+}
+.footer-invite{
+  display:flex;
+  flex-direction:column;
+  text-align:right;
+  gap:4px;
+}
+.footer-invite strong{
+  color:var(--gold-light);
+  font-family:"Noto Serif Gujarati",serif;
+  font-size:1.15rem;
+}
+.footer-invite span{
+  color:#ead9ce;
+  font-size:.9rem;
+}
+.footer-divider{
+  height:1px;
+  background:rgba(255,239,210,.18);
+  margin:32px 0 20px;
+}
+.footer-bottom{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+  flex-wrap: wrap;
+}
+.footer-bottom p{
+  margin:0;
+  color:#f4e5d9;
+  font-size:.9rem;
+}
+.footer-bottom p:last-child{
+  color:var(--gold-light);
+  font-weight:700;
+}
+
+/* RESPONSIVE DESIGN */
+@media(max-width:680px){
+  .hero{padding: 50px 0 60px;}
+
+  .event-card{
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 18px 20px;
+  }
+  .date-box{
+    border-right: none;
+    border-bottom: 1px solid var(--line);
+    padding-right: 0;
+    padding-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-align: left;
+  }
+  .date-box strong{font-size: 2rem; display: inline;}
+  .date-box span{display: inline; margin-top: 0;}
+  .aarti-banner-inner{flex-direction: column; text-align: center; justify-content: center;}
+  .aarti-title-group{flex-direction: column; text-align: center;}
+  .footer-top{flex-direction: column; text-align: center;}
+  .footer-invite{text-align: center;}
+}
+
+
+/* MOBILE-FIRST IMPROVEMENTS */
+@media(max-width:680px){
+  body{font-size:15px;line-height:1.6;overflow-x:hidden}
+  .container{width:min(100% - 24px,1080px)}
+  .hero{padding:42px 0 46px;min-height:auto}
+  .hero h1{font-size:clamp(2rem,11vw,3.1rem);line-height:1.15}
+  .invocation{font-size:1rem;letter-spacing:1px}
+  .hero-line{margin:12px auto 18px}
+  .primary-btn{height:48px;padding:0 22px;font-size:.98rem;width:100%;max-width:320px}
+
+  .aarti-banner{padding:16px 0}
+  .aarti-banner-inner{padding:16px;border-radius:12px;gap:14px}
+  .aarti-title-group{gap:10px}
+  .aarti-icon-badge{width:46px;height:46px;font-size:1.3rem}
+  .aarti-text h3{font-size:1.08rem}
+  .aarti-text p{font-size:.84rem}
+  .aarti-times{width:100%;gap:8px}
+  .time-pill{width:100%;justify-content:center;text-align:center;padding:9px 12px;font-size:.88rem}
+
+  .section{padding:44px 0 54px}
+  .section-heading{margin-bottom:24px}
+  .section-heading h2{font-size:1.8rem}
+  .section-heading>p:last-child{font-size:.92rem}
+
+  .filter-container{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:24px}
+  .filter-btn{padding:9px 10px;font-size:.82rem;line-height:1.35}
+
+  .timeline{gap:14px}
+  .event-card{grid-template-columns:1fr;gap:10px;padding:16px;border-radius:12px}
+  .date-box{display:flex;align-items:baseline;gap:8px;border-right:0;border-bottom:1px solid var(--line);padding:0 0 10px;text-align:left}
+  .date-box strong{font-size:2rem;line-height:1}
+  .date-box span{font-size:.9rem;margin:0}
+  .event-kicker{font-size:.75rem}
+  .event-content h3{font-size:1.28rem;line-height:1.35}
+  .event-content p{font-size:.9rem;margin:5px 0 7px}
+  .performer{font-size:.82rem!important}
+  .time-badge{display:flex;width:100%;font-size:.9rem;line-height:1.45;padding:7px 10px;border-radius:8px}
+  .event-card.featured::before{font-size:.66rem;padding:3px 10px}
+
+  .site-footer{padding:36px 0 24px}
+  .footer-brand{flex-direction:column;text-align:center;gap:10px}
+  .footer-bottom{flex-direction:column;text-align:center;gap:8px}
+  .footer-bottom p{font-size:.82rem}
+}
+
+@media(max-width:420px){
+  .container{width:calc(100% - 20px)}
+  .filter-container{grid-template-columns:1fr}
+  .hero h1{font-size:2.15rem}
+  .event-content h3{font-size:1.18rem}
+  .time-badge{font-size:.84rem}
+}
+
+</style>
+</head>
+<body>
+<main>
+    <!-- HERO SECTION WITH GANPATI BACKGROUND & VECTOR ART -->
+    <section id="home" class="hero">
+      <div class="hero-pattern" aria-hidden="true"></div>
+      <div class="hero-glow" aria-hidden="true"></div>
+      
+      <div class="container hero-inner">
+        <p class="invocation">॥ શ્રી ગણેશાય નમઃ ॥</p>
+
+        <div class="hero-line"></div>
+        <h1>માર્વેલ લક્ઝરિયા<br><span>ગણેશોત્સવ</span></h1>
+        <a class="primary-btn" href="#events">
+          <span>કાર્યક્રમ પત્રિકા જુઓ</span>
+          <span style="font-size: 1.2rem;">↓</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- DAILY AARTI BANNER -->
+    <div class="aarti-banner">
+      <div class="container">
+        <div class="aarti-banner-inner">
+          <div class="aarti-title-group">
+            <div class="aarti-icon-badge">🪔</div>
+            <div class="aarti-text">
+              <h3>નિત્ય ગણપતિ બાપ્પાની મહા આરતી</h3>
+              <p>ઉત્સવના તમામ ૧૩ દિવસો દરમિયાન દરરોજ બે ટાઇમ આરતી દર્શન</p>
+            </div>
+          </div>
+          <div class="aarti-times">
+            <div class="time-pill">
+              🌅 પ્રભાત આરતી: <span>સવારે ૮:૦૦ વાગ્યે</span>
+            </div>
+            <div class="time-pill">
+              🌆 સાયં આરતી: <span>સાંજે ૭:૦૦ વાગ્યે</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- EVENTS TIMELINE SECTION -->
+    <section id="events" class="events section">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">આપણા ઉત્સવની ઉજવણી</p>
+          <h2>ગણેશોત્સવ કાર્યક્રમ પત્રિકા</h2>
+          <p>૧૩/૦૯ થી ૨૫/૦૯ ના રોજના તમામ ધાર્મિક, સાંસ્કૃતિક અને મનોરંજન કાર્યક્રમોની માહિતી</p>
+        </div>
+
+        <!-- FILTER BUTTONS -->
+        <div class="filter-container">
+          <button class="filter-btn active" onclick="filterEvents('all')">તમામ કાર્યક્રમો (૧૩ દિવસ)</button>
+          <button class="filter-btn" onclick="filterEvents('featured')">ખાસ આકર્ષણ</button>
+          <button class="filter-btn" onclick="filterEvents('competition')">સ્પર્ધા & રમતો</button>
+          <button class="filter-btn" onclick="filterEvents('cultural')">સાંસ્કૃતિક & ભક્તિ</button>
+        </div>
+
+        <div class="timeline" id="timeline-container">
+          <article class="event-card featured" data-category="featured cultural">
+            <div class="date-box"><strong>૧૩</strong><span>સપ્ટેમ્બર</span></div>
+            <div class="event-content">
+              <p class="event-kicker">ગણેશ આગમન • પ્રારંભ</p>
+              <h3>ગણેશ આગમન</h3>
+              <p>ઢોલ-નગારા અને વિધિવત્ પૂજન સાથે ગણપતિ બાપ્પાનું ભવ્ય આગમન અને સ્થાપના.</p>
+              <div class="time-badge">⏰ રાત્રે ૯:૦૦ વાગ્યે</div>
+            </div>
+          </article>
+
+          <article class="event-card" data-category="competition">
+            <div class="date-box"><strong>૧૪</strong><span>સપ્ટેમ્બર</span></div>
+            <div class="event-content">
+              <p class="event-kicker">પ્રથમ દિવસ</p><h3>ચિત્રકામ સ્પર્ધા (Drawing)</h3>
+              <p>બાળકો માટે સર્જનાત્મક ચિત્રકામ અને રંગપૂરણીની મજેદાર સ્પર્ધા.</p>
+            </div>
+          </article>
+
+          <article class="event-card" data-category="cultural">
+            <div class="date-box"><strong>૧૫</strong><span>સપ્ટેમ્બર</span></div>
+            <div class="event-content">
+              <p class="event-kicker">બીજો દિવસ</p><h3>મૂવી નાઇટ (Movie Night)</h3>
+              <p>પરિવાર અને મિત્રો સાથે મનોરંજનભરી મૂવી નાઇટ.</p>
+            </div>
+          </article>
+
+          <article class="event-card" data-category="cultural">
+            <div class="date-box"><strong>૧૬</strong><span>સપ્ટેમ્બર</span></div>
+            <div class="event-content">
+              <p class="event-kicker">ત્રીજો દિવસ</p><h3>લોક ગીત</h3>
+              <p>ગુજરાતી લોક સંસ્કૃતિ અને મધુર લોકગીતોથી સંગીતમય સાંજ.</p>
+            </div>
+          </article>
+
+          <article class="event-card break-day" data-category="cultural">
+            <div class="date-box"><strong>૧૭</strong><span>સપ્ટેમ્બર</span></div>
+            <div class="event-content"><p class="event-kicker">વિરામ દિવસ</p><h3>બ્રેક</h3><p>આરામ, દર્શન અને નિત્ય આરતી.</p></div>
+          </article>
+
+          <article class="event-card featured" data-category="featured cultural">
+            <div class="date-box"><strong>૧૮</strong><span>સપ્ટેમ્બર</span></div>
+            <div class="event-content"><p class="event-kicker">મહા આકર્ષણ • પાંચમો દિવસ</p><h3>ભવ્ય ડાયરો</h3><p>લોક સાહિત્ય, હાસ્ય અને ભક્તિરસથી સભર ભવ્ય ડાયરો.</p></div>
+          </article>
+
+          <article class="event-card" data-category="cultural">
+            <div class="date-box"><strong>૧૯</strong><span>સપ્ટેમ્બર</span></div>
+            <div class="event-content"><p class="event-kicker">છઠ્ઠો દિવસ</p><h3>કથા</h3><p>ભક્તિમય કથા અને સત્સંગનો આધ્યાત્મિક લાભ.</p></div>
+          </article>
+
+          <article class="event-card" data-category="competition">
+            <div class="date-box"><strong>૨૦</strong><span>સપ્ટેમ્બર</span></div>
+            <div class="event-content"><p class="event-kicker">સાતમો દિવસ</p><h3>રમત-ગમત</h3><p>બાળકો, બહેનો અને તમામ સભ્યો માટે વિવિધ મનોરંજક રમતો.</p></div>
+          </article>
+
+          <article class="event-card break-day" data-category="cultural">
+            <div class="date-box"><strong>૨૧</strong><span>સપ્ટેમ્બર</span></div>
+            <div class="event-content"><p class="event-kicker">વિરામ દિવસ</p><h3>બ્રેક</h3><p>પરિવાર સાથે બાપ્પાના દર્શન અને આરતી.</p></div>
+          </article>
+
+          <article class="event-card featured" data-category="featured cultural">
+            <div class="date-box"><strong>૨૨</strong><span>સપ્ટેમ્બર</span></div>
+            <div class="event-content"><p class="event-kicker">નવમો દિવસ</p><h3>ગરબા</h3><p>બાપ્પાના સાનિધ્યમાં પરંપરાગત ગરબા રાસની રમઝટ.</p></div>
+          </article>
+
+          <article class="event-card" data-category="cultural">
+            <div class="date-box"><strong>૨૩</strong><span>સપ્ટેમ્બર</span></div>
+            <div class="event-content"><p class="event-kicker">દસમો દિવસ</p><h3>કીર્તન</h3><p>ભક્તિમય કીર્તન અને સંગીતમય ભજન સંધ્યા.</p></div>
+          </article>
+
+          <article class="event-card featured" data-category="featured cultural">
+            <div class="date-box"><strong>૨૪</strong><span>સપ્ટેમ્બર</span></div>
+            <div class="event-content"><p class="event-kicker">અગિયારમો દિવસ • મહા મહોત્સવ</p><h3>૫૬ ભોગ અને મહા આરતી</h3><p>બાપ્પાને ૫૬ ભોગ ધરાવી ભવ્ય મહા આરતી સાથે ઉત્સવની ભક્તિમય ઉજવણી.</p></div>
+          </article>
+
+          <article class="event-card featured" data-category="featured cultural">
+            <div class="date-box"><strong>૨૫</strong><span>સપ્ટેમ્બર</span></div>
+            <div class="event-content"><p class="event-kicker">છેલ્લો દિવસ • ભવ્ય વિદાય</p><h3>વિસર્જન અને ડિનર</h3><p>બાપ્પાની શોભાયાત્રા અને વિસર્જન બાદ સૌ માટે સમૂહ ડિનર.</p><div class="time-badge">⏰ વિસર્જન: બપોરે ૩:૩૦ વાગ્યે</div></div>
+          </article>
+        </div>
+      </div>
+    </section>
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container footer-content">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-mark">ૐ</div>
+        <div>
+          <h2>માર્વેલ લક્ઝરિયા</h2>
+          <p>ગણેશોત્સવ (૧૩/૦૯ થી ૨૫/૦૯)</p>
+        </div>
+      </div>
+      <div class="footer-invite">
+        <strong>આપ સૌને હાર્દિક આમંત્રણ</strong>
+        <span>પરિવાર અને મિત્રો સાથે અવશ્ય પધારજો 🙏</span>
+      </div>
+    </div>
+
+    <div class="footer-divider"></div>
+    
+    <div class="footer-bottom">
+      <p>© માર્વેલ લક્ઝરિયા ગણેશોત્સવ સમિતિ. સર્વાધિકાર સુરક્ષિત.</p>
+      <p>ગણપતિ બાપ્પા મોરિયા! 🚩</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Intersection Observer for scroll animation
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+      }
+    });
+  }, {threshold: 0.1});
+  
+  document.querySelectorAll('.event-card').forEach(el => observer.observe(el));
+
+  // Category Filtering Logic
+  function filterEvents(category) {
+    // Update active filter button
+    document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+    event.target.classList.add('active');
+
+    const cards = document.querySelectorAll('.event-card');
+    cards.forEach(card => {
+      if (category === 'all') {
+        card.style.display = 'grid';
+      } else {
+        const cardCategories = card.getAttribute('data-category');
+        if (cardCategories && cardCategories.includes(category)) {
+          card.style.display = 'grid';
+        } else {
+          card.style.display = 'none';
+        }
+      }
+    });
+  }
+</script>
+</body>
+</html>
