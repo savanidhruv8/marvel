@@ -677,6 +677,147 @@ h1,h2,h3{font-family:"Noto Serif Gujarati",serif;line-height:1.25;margin:0}
   }
 }
 
+
+
+.aarti-modal-kicker{
+  margin:0 0 2px;
+  color:var(--saffron-dark);
+  font-size:.78rem;
+  font-weight:800;
+}
+.aarti-time-row{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:8px;
+  margin-bottom:14px;
+}
+.aarti-time-row span{
+  text-align:center;
+  background:#fff7ea;
+  border:1px solid #ebd4b3;
+  border-radius:12px;
+  padding:9px 6px;
+  color:var(--maroon);
+  font-size:.84rem;
+  font-weight:800;
+}
+.aarti-day-list{
+  display:grid;
+  gap:10px;
+}
+.aarti-day-card{
+  display:grid;
+  grid-template-columns:58px 1fr;
+  align-items:center;
+  gap:12px;
+  padding:12px;
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:14px;
+}
+.aarti-day-number{
+  width:50px;
+  height:50px;
+  display:grid;
+  place-items:center;
+  border-radius:12px;
+  background:linear-gradient(135deg,var(--maroon),var(--saffron-dark));
+  color:var(--gold-light);
+  font-family:"Noto Serif Gujarati",serif;
+  font-size:1.35rem;
+  font-weight:800;
+}
+.aarti-day-date{
+  margin:0 0 2px;
+  color:var(--saffron-dark);
+  font-size:.75rem;
+  font-weight:800;
+}
+.aarti-flats{
+  margin:0;
+  color:var(--maroon);
+  font-size:.92rem;
+  line-height:1.5;
+  font-weight:700;
+}
+@media(max-width:380px){
+  .aarti-dialog{padding-left:13px;padding-right:13px;}
+  .aarti-time-row span{font-size:.76rem;}
+  .aarti-day-card{grid-template-columns:50px 1fr;gap:9px;padding:10px;}
+  .aarti-day-number{width:44px;height:44px;font-size:1.15rem;}
+  .aarti-flats{font-size:.84rem;}
+}
+
+/* Final mobile-first hero refinement */
+.hero{
+  min-height:100svh;
+  min-height:100dvh;
+  padding:clamp(24px,5vh,64px) 14px;
+}
+.hero-inner{
+  width:min(100%,820px);
+}
+.hero h1{
+  font-size:clamp(3rem,15vw,5.4rem);
+  line-height:1.04;
+  letter-spacing:-.025em;
+  white-space:normal;
+}
+.hero-actions{
+  flex-direction:row;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  margin-top:clamp(24px,4vh,34px);
+}
+.hero-actions .primary-btn,
+.hero-actions .secondary-btn{
+  width:auto;
+  min-height:46px;
+  height:46px;
+  padding:0 17px;
+  font-size:.92rem;
+}
+.hero-actions .primary-btn{
+  min-width:0;
+}
+.secondary-btn{
+  min-width:0;
+}
+@media(max-width:680px){
+  .hero{
+    padding:22px 12px 30px;
+  }
+  .hero-inner{
+    min-height:calc(100svh - 52px);
+  }
+  .hero h1{
+    font-size:clamp(3rem,16.5vw,4.8rem);
+  }
+  .hero-actions{
+    width:100%;
+    flex-direction:row;
+    gap:8px;
+  }
+  .hero-actions .primary-btn,
+  .hero-actions .secondary-btn{
+    flex:1 1 0;
+    width:auto;
+    max-width:none;
+    padding:0 10px;
+    font-size:clamp(.78rem,3.35vw,.92rem);
+    white-space:nowrap;
+  }
+}
+@media(max-width:360px){
+  .hero h1{font-size:clamp(2.65rem,16vw,3.7rem);}
+  .hero-actions .primary-btn,
+  .hero-actions .secondary-btn{
+    padding:0 7px;
+    font-size:.75rem;
+  }
+}
+
 /* RESPONSIVE DESIGN */
 @media(max-width:680px){
   .hero{padding: 50px 0 60px;}
@@ -996,7 +1137,50 @@ h1,h2,h3{font-family:"Noto Serif Gujarati",serif;line-height:1.25;margin:0}
     filterEvents('upcoming', upcomingBtn);
   }
 
+  // Daily Aarti flat schedule.
+  // Replace the values below with the confirmed society flat allocation.
+  const aartiSchedule = {
+    "2026-09-13": ["A-101, 102, 103", "A-1103", "B-101, 102, 103"],
+    "2026-09-14": ["A-101, 102, 103", "A-1103", "B-101, 102, 103"],
+    "2026-09-15": ["A-101, 102, 103", "A-1103", "B-101, 102, 103"],
+    "2026-09-16": ["A-101, 102, 103", "A-1103", "B-101, 102, 103"],
+    "2026-09-17": ["A-101, 102, 103", "A-1103", "B-101, 102, 103"],
+    "2026-09-18": ["A-101, 102, 103", "A-1103", "B-101, 102, 103"],
+    "2026-09-19": ["A-101, 102, 103", "A-1103", "B-101, 102, 103"],
+    "2026-09-20": ["A-101, 102, 103", "A-1103", "B-101, 102, 103"],
+    "2026-09-21": ["A-101, 102, 103", "A-1103", "B-101, 102, 103"],
+    "2026-09-22": ["A-101, 102, 103", "A-1103", "B-101, 102, 103"],
+    "2026-09-23": ["A-101, 102, 103", "A-1103", "B-101, 102, 103"],
+    "2026-09-24": ["A-101, 102, 103", "A-1103", "B-101, 102, 103"],
+    "2026-09-25": ["A-101, 102, 103", "A-1103", "B-101, 102, 103"]
+  };
+
+  const gujaratiDays = ["રવિવાર","સોમવાર","મંગળવાર","બુધવાર","ગુરુવાર","શુક્રવાર","શનિવાર"];
+  const gujaratiDigits = "૦૧૨૩૪૫૬૭૮૯";
+  function toGujaratiNumber(value){
+    return String(value).replace(/\d/g, d => gujaratiDigits[d]);
+  }
+
+  function renderAartiSchedule(){
+    const list = document.getElementById('aartiDayList');
+    if (!list) return;
+    const entries = Object.entries(aartiSchedule).sort((a,b) => a[0].localeCompare(b[0]));
+    list.innerHTML = entries.map(([iso, flats]) => {
+      const d = new Date(iso + "T00:00:00");
+      const day = toGujaratiNumber(d.getDate());
+      const weekday = gujaratiDays[d.getDay()];
+      return `<div class="aarti-day-card">
+        <div class="aarti-day-number">${day}</div>
+        <div>
+          <p class="aarti-day-date">${weekday} • ${day} સપ્ટેમ્બર</p>
+          <p class="aarti-flats">${flats.join(" • ")}</p>
+        </div>
+      </div>`;
+    }).join("");
+  }
+
   function openAartiModal(){
+    renderAartiSchedule();
     document.getElementById('aartiModal').classList.add('open');
     document.body.style.overflow = 'hidden';
   }
