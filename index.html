@@ -570,6 +570,113 @@ h1,h2,h3{font-family:"Noto Serif Gujarati",serif;line-height:1.25;margin:0}
   }
 }
 
+
+.hero-actions{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:12px;
+  width:100%;
+  margin-top:clamp(22px,4vh,34px);
+}
+.hero-actions .primary-btn{
+  margin:0;
+}
+.secondary-btn{
+  min-height:48px;
+  width:min(100%,280px);
+  padding:0 22px;
+  border:1px solid rgba(249,229,150,.8);
+  border-radius:28px;
+  background:rgba(255,255,255,.10);
+  color:#fff8ee;
+  font-family:"Noto Sans Gujarati",sans-serif;
+  font-size:1rem;
+  font-weight:700;
+  cursor:pointer;
+  backdrop-filter:blur(8px);
+  transition:transform .2s ease, background .2s ease;
+}
+.secondary-btn:hover{
+  transform:translateY(-2px);
+  background:rgba(255,255,255,.16);
+}
+.aarti-modal{
+  position:fixed;
+  inset:0;
+  z-index:1000;
+  display:none;
+  align-items:flex-end;
+  justify-content:center;
+  background:rgba(30,8,9,.62);
+  padding:0;
+}
+.aarti-modal.open{display:flex;}
+.aarti-dialog{
+  width:min(100%,620px);
+  max-height:min(88svh,720px);
+  overflow:auto;
+  background:#fffdf9;
+  border-radius:24px 24px 0 0;
+  padding:24px 18px calc(24px + env(safe-area-inset-bottom));
+  box-shadow:0 -12px 45px rgba(0,0,0,.25);
+}
+.aarti-dialog-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  margin-bottom:18px;
+}
+.aarti-dialog h2{
+  color:var(--maroon);
+  font-size:1.45rem;
+}
+.aarti-close{
+  width:40px;
+  height:40px;
+  border:1px solid var(--line);
+  border-radius:50%;
+  background:#fff;
+  color:var(--maroon);
+  font-size:1.2rem;
+  cursor:pointer;
+}
+.aarti-info-card{
+  background:#fff7ea;
+  border:1px solid #ebd4b3;
+  border-radius:16px;
+  padding:16px;
+  margin-bottom:12px;
+}
+.aarti-info-card strong{
+  display:block;
+  color:var(--maroon);
+  margin-bottom:4px;
+}
+.aarti-flat-list{
+  margin:12px 0 0;
+  padding-left:20px;
+  color:var(--muted);
+}
+.aarti-note{
+  margin:14px 0 0;
+  color:var(--muted);
+  font-size:.9rem;
+}
+@media (min-width:681px){
+  .hero-actions{
+    flex-direction:row;
+    justify-content:center;
+  }
+}
+@media (max-width:680px){
+  .hero-actions .primary-btn,
+  .hero-actions .secondary-btn{
+    width:min(100%,300px);
+  }
+}
+
 /* RESPONSIVE DESIGN */
 @media(max-width:680px){
   .hero{padding: 50px 0 60px;}
@@ -665,10 +772,15 @@ h1,h2,h3{font-family:"Noto Serif Gujarati",serif;line-height:1.25;margin:0}
 
         <div class="hero-line"></div>
         <h1>માર્વેલ લક્ઝરિયા<br><span>ગણેશોત્સવ</span></h1>
-        <a class="primary-btn" href="#events">
-          <span>કાર્યક્રમ પત્રિકા જુઓ</span>
-          <span style="font-size: 1.2rem;">↓</span>
-        </a>
+        <div class="hero-actions">
+          <a class="primary-btn" href="#events">
+            <span>આગામી કાર્યક્રમો જુઓ</span>
+            <span style="font-size: 1.2rem;">↓</span>
+          </a>
+          <button class="secondary-btn" type="button" onclick="openAartiModal()">
+            🪔 આરતી માહિતી
+          </button>
+        </div>
       </div>
     </section>
 
@@ -701,19 +813,17 @@ h1,h2,h3{font-family:"Noto Serif Gujarati",serif;line-height:1.25;margin:0}
         <div class="section-heading">
           <p class="eyebrow">આપણા ઉત્સવની ઉજવણી</p>
           <h2>ગણેશોત્સવ કાર્યક્રમ પત્રિકા</h2>
-          <p>૧૩/૦૯ થી ૨૫/૦૯ ના રોજના તમામ ધાર્મિક, સાંસ્કૃતિક અને મનોરંજન કાર્યક્રમોની માહિતી</p>
+          <p>આજથી આગળના કાર્યક્રમો અહીં આપમેળે દર્શાશે. પૂર્ણ થયેલા કાર્યક્રમો “પાછળના કાર્યક્રમો”માં જોવા મળશે.</p>
         </div>
 
         <!-- FILTER BUTTONS -->
         <div class="filter-container">
-          <button class="filter-btn active" onclick="filterEvents('all')">તમામ કાર્યક્રમો (૧૩ દિવસ)</button>
-          <button class="filter-btn" onclick="filterEvents('featured')">ખાસ આકર્ષણ</button>
-          <button class="filter-btn" onclick="filterEvents('competition')">સ્પર્ધા & રમતો</button>
-          <button class="filter-btn" onclick="filterEvents('cultural')">સાંસ્કૃતિક & ભક્તિ</button>
+          <button class="filter-btn active" onclick="filterEvents('upcoming', this)">આગામી કાર્યક્રમો</button>
+          <button class="filter-btn" onclick="filterEvents('past', this)">પાછળના કાર્યક્રમો</button>
         </div>
 
         <div class="timeline" id="timeline-container">
-          <article class="event-card featured" data-category="featured cultural">
+          <article class="event-card featured" data-category="featured cultural" data-event-date="2026-09-13">
             <div class="date-box"><strong>૧૩</strong><span>સપ્ટેમ્બર</span></div>
             <div class="event-content">
               <p class="event-kicker">ગણેશ આગમન • પ્રારંભ</p>
@@ -723,7 +833,7 @@ h1,h2,h3{font-family:"Noto Serif Gujarati",serif;line-height:1.25;margin:0}
             </div>
           </article>
 
-          <article class="event-card" data-category="competition">
+          <article class="event-card" data-category="competition" data-event-date="2026-09-14">
             <div class="date-box"><strong>૧૪</strong><span>સપ્ટેમ્બર</span></div>
             <div class="event-content">
               <p class="event-kicker">પ્રથમ દિવસ</p><h3>ચિત્રકામ સ્પર્ધા (Drawing)</h3>
@@ -731,7 +841,7 @@ h1,h2,h3{font-family:"Noto Serif Gujarati",serif;line-height:1.25;margin:0}
             </div>
           </article>
 
-          <article class="event-card" data-category="cultural">
+          <article class="event-card" data-category="cultural" data-event-date="2026-09-15">
             <div class="date-box"><strong>૧૫</strong><span>સપ્ટેમ્બર</span></div>
             <div class="event-content">
               <p class="event-kicker">બીજો દિવસ</p><h3>મૂવી નાઇટ (Movie Night)</h3>
@@ -739,7 +849,7 @@ h1,h2,h3{font-family:"Noto Serif Gujarati",serif;line-height:1.25;margin:0}
             </div>
           </article>
 
-          <article class="event-card" data-category="cultural">
+          <article class="event-card" data-category="cultural" data-event-date="2026-09-16">
             <div class="date-box"><strong>૧૬</strong><span>સપ્ટેમ્બર</span></div>
             <div class="event-content">
               <p class="event-kicker">ત્રીજો દિવસ</p><h3>લોક ગીત</h3>
@@ -747,47 +857,47 @@ h1,h2,h3{font-family:"Noto Serif Gujarati",serif;line-height:1.25;margin:0}
             </div>
           </article>
 
-          <article class="event-card break-day" data-category="cultural">
+          <article class="event-card break-day" data-category="cultural" data-event-date="2026-09-17">
             <div class="date-box"><strong>૧૭</strong><span>સપ્ટેમ્બર</span></div>
             <div class="event-content"><p class="event-kicker">વિરામ દિવસ</p><h3>બ્રેક</h3><p>આરામ, દર્શન અને નિત્ય આરતી.</p></div>
           </article>
 
-          <article class="event-card featured" data-category="featured cultural">
+          <article class="event-card featured" data-category="featured cultural" data-event-date="2026-09-18">
             <div class="date-box"><strong>૧૮</strong><span>સપ્ટેમ્બર</span></div>
             <div class="event-content"><p class="event-kicker">મહા આકર્ષણ • પાંચમો દિવસ</p><h3>ભવ્ય ડાયરો</h3><p>લોક સાહિત્ય, હાસ્ય અને ભક્તિરસથી સભર ભવ્ય ડાયરો.</p></div>
           </article>
 
-          <article class="event-card" data-category="cultural">
+          <article class="event-card" data-category="cultural" data-event-date="2026-09-19">
             <div class="date-box"><strong>૧૯</strong><span>સપ્ટેમ્બર</span></div>
             <div class="event-content"><p class="event-kicker">છઠ્ઠો દિવસ</p><h3>કથા</h3><p>ભક્તિમય કથા અને સત્સંગનો આધ્યાત્મિક લાભ.</p></div>
           </article>
 
-          <article class="event-card" data-category="competition">
+          <article class="event-card" data-category="competition" data-event-date="2026-09-20">
             <div class="date-box"><strong>૨૦</strong><span>સપ્ટેમ્બર</span></div>
             <div class="event-content"><p class="event-kicker">સાતમો દિવસ</p><h3>રમત-ગમત</h3><p>બાળકો, બહેનો અને તમામ સભ્યો માટે વિવિધ મનોરંજક રમતો.</p></div>
           </article>
 
-          <article class="event-card break-day" data-category="cultural">
+          <article class="event-card break-day" data-category="cultural" data-event-date="2026-09-21">
             <div class="date-box"><strong>૨૧</strong><span>સપ્ટેમ્બર</span></div>
             <div class="event-content"><p class="event-kicker">વિરામ દિવસ</p><h3>બ્રેક</h3><p>પરિવાર સાથે બાપ્પાના દર્શન અને આરતી.</p></div>
           </article>
 
-          <article class="event-card featured" data-category="featured cultural">
+          <article class="event-card featured" data-category="featured cultural" data-event-date="2026-09-22">
             <div class="date-box"><strong>૨૨</strong><span>સપ્ટેમ્બર</span></div>
             <div class="event-content"><p class="event-kicker">નવમો દિવસ</p><h3>ગરબા</h3><p>બાપ્પાના સાનિધ્યમાં પરંપરાગત ગરબા રાસની રમઝટ.</p></div>
           </article>
 
-          <article class="event-card" data-category="cultural">
+          <article class="event-card" data-category="cultural" data-event-date="2026-09-23">
             <div class="date-box"><strong>૨૩</strong><span>સપ્ટેમ્બર</span></div>
             <div class="event-content"><p class="event-kicker">દસમો દિવસ</p><h3>કીર્તન</h3><p>ભક્તિમય કીર્તન અને સંગીતમય ભજન સંધ્યા.</p></div>
           </article>
 
-          <article class="event-card featured" data-category="featured cultural">
+          <article class="event-card featured" data-category="featured cultural" data-event-date="2026-09-24">
             <div class="date-box"><strong>૨૪</strong><span>સપ્ટેમ્બર</span></div>
             <div class="event-content"><p class="event-kicker">અગિયારમો દિવસ • મહા મહોત્સવ</p><h3>૫૬ ભોગ અને મહા આરતી</h3><p>બાપ્પાને ૫૬ ભોગ ધરાવી ભવ્ય મહા આરતી સાથે ઉત્સવની ભક્તિમય ઉજવણી.</p></div>
           </article>
 
-          <article class="event-card featured" data-category="featured cultural">
+          <article class="event-card featured" data-category="featured cultural" data-event-date="2026-09-25">
             <div class="date-box"><strong>૨૫</strong><span>સપ્ટેમ્બર</span></div>
             <div class="event-content"><p class="event-kicker">છેલ્લો દિવસ • ભવ્ય વિદાય</p><h3>વિસર્જન અને ડિનર</h3><p>બાપ્પાની શોભાયાત્રા અને વિસર્જન બાદ સૌ માટે સમૂહ ડિનર.</p><div class="time-badge">⏰ વિસર્જન: બપોરે ૩:૩૦ વાગ્યે</div></div>
           </article>
@@ -834,26 +944,102 @@ h1,h2,h3{font-family:"Noto Serif Gujarati",serif;line-height:1.25;margin:0}
   
   document.querySelectorAll('.event-card').forEach(el => observer.observe(el));
 
-  // Category Filtering Logic
-  function filterEvents(category) {
-    // Update active filter button
-    document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
-    event.target.classList.add('active');
+  // Upcoming / Past events — automatically changes from the event date.
+  function getTodayLocal(){
+    const now = new Date();
+    return new Date(now.getFullYear(), now.getMonth(), now.getDate());
+  }
 
-    const cards = document.querySelectorAll('.event-card');
-    cards.forEach(card => {
-      if (category === 'all') {
-        card.style.display = 'grid';
+  function filterEvents(category, clickedButton){
+    document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+    if (clickedButton) clickedButton.classList.add('active');
+
+    const today = getTodayLocal();
+    document.querySelectorAll('.event-card').forEach(card => {
+      const eventDate = new Date(card.dataset.eventDate + "T00:00:00");
+      const isPast = eventDate < today;
+
+      if (category === 'past') {
+        card.style.display = isPast ? 'grid' : 'none';
       } else {
-        const cardCategories = card.getAttribute('data-category');
-        if (cardCategories && cardCategories.includes(category)) {
-          card.style.display = 'grid';
-        } else {
-          card.style.display = 'none';
-        }
+        card.style.display = isPast ? 'none' : 'grid';
       }
     });
   }
+
+  function updateEventStatus(){
+    const today = getTodayLocal();
+    let upcomingCount = 0;
+    let pastCount = 0;
+
+    document.querySelectorAll('.event-card').forEach(card => {
+      const eventDate = new Date(card.dataset.eventDate + "T00:00:00");
+      if (eventDate < today) {
+        card.dataset.status = "past";
+        pastCount++;
+      } else {
+        card.dataset.status = "upcoming";
+        upcomingCount++;
+      }
+    });
+
+    const upcomingBtn = document.querySelector('.filter-btn[onclick*="upcoming"]');
+    if (upcomingBtn) {
+      upcomingBtn.textContent = `આગામી કાર્યક્રમો (${upcomingCount})`;
+    }
+    const pastBtn = document.querySelector('.filter-btn[onclick*="past"]');
+    if (pastBtn) {
+      pastBtn.textContent = `પાછળના કાર્યક્રમો (${pastCount})`;
+    }
+
+    // Default view: upcoming only.
+    filterEvents('upcoming', upcomingBtn);
+  }
+
+  function openAartiModal(){
+    document.getElementById('aartiModal').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeAartiModal(event){
+    if (event && event.target !== event.currentTarget) return;
+    document.getElementById('aartiModal').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape') closeAartiModal();
+  });
+
+  updateEventStatus();
 </script>
+
+<div class="aarti-modal" id="aartiModal" role="dialog" aria-modal="true" aria-labelledby="aartiModalTitle" onclick="closeAartiModal(event)">
+  <div class="aarti-dialog" onclick="event.stopPropagation()">
+    <div class="aarti-dialog-head">
+      <h2 id="aartiModalTitle">🪔 આરતી માહિતી</h2>
+      <button class="aarti-close" type="button" aria-label="Close" onclick="closeAartiModal()">×</button>
+    </div>
+
+    <div class="aarti-info-card">
+      <strong>🌅 પ્રભાત આરતી</strong>
+      <span>દરરોજ સવારે ૮:૦૦ વાગ્યે</span>
+    </div>
+
+    <div class="aarti-info-card">
+      <strong>🌆 સાયં આરતી</strong>
+      <span>દરરોજ સાંજે ૭:૦૦ વાગ્યે</span>
+    </div>
+
+    <div class="aarti-info-card">
+      <strong>🏠 ફ્લેટ / માળ પ્રમાણે આરતી</strong>
+      <ul class="aarti-flat-list" id="aartiFlatList">
+        <li>ફ્લેટ / માળની આરતીનું શેડ્યૂલ અહીં દર્શાવવામાં આવશે.</li>
+      </ul>
+      <p class="aarti-note">ફ્લેટ નંબર, માળ અને પરિવારના નામની ચોક્કસ માહિતી આપવામાં આવેલી નથી, તેથી અહીં કોઈ નામ/ફ્લેટ નંબર મનગમતો ઉમેરવામાં આવ્યો નથી.</p>
+    </div>
+  </div>
+</div>
+
 </body>
 </html>
