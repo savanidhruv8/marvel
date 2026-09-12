@@ -654,11 +654,6 @@ h1,h2,h3{font-family:"Noto Serif Gujarati",serif;line-height:1.25;margin:0}
   color:var(--maroon);
   margin-bottom:4px;
 }
-.aarti-flat-list{
-  margin:12px 0 0;
-  padding-left:20px;
-  color:var(--muted);
-}
 .aarti-note{
   margin:14px 0 0;
   color:var(--muted);
@@ -678,143 +673,205 @@ h1,h2,h3{font-family:"Noto Serif Gujarati",serif;line-height:1.25;margin:0}
 }
 
 
-
-.aarti-modal-kicker{
-  margin:0 0 2px;
-  color:var(--saffron-dark);
-  font-size:.78rem;
-  font-weight:800;
-}
-.aarti-time-row{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:8px;
-  margin-bottom:14px;
-}
-.aarti-time-row span{
-  text-align:center;
-  background:#fff7ea;
-  border:1px solid #ebd4b3;
-  border-radius:12px;
-  padding:9px 6px;
-  color:var(--maroon);
-  font-size:.84rem;
-  font-weight:800;
-}
-.aarti-day-list{
-  display:grid;
-  gap:10px;
-}
-.aarti-day-card{
-  display:grid;
-  grid-template-columns:58px 1fr;
-  align-items:center;
-  gap:12px;
-  padding:12px;
-  background:#fff;
-  border:1px solid var(--line);
-  border-radius:14px;
-}
-.aarti-day-number{
-  width:50px;
-  height:50px;
-  display:grid;
-  place-items:center;
-  border-radius:12px;
-  background:linear-gradient(135deg,var(--maroon),var(--saffron-dark));
-  color:var(--gold-light);
-  font-family:"Noto Serif Gujarati",serif;
-  font-size:1.35rem;
-  font-weight:800;
-}
-.aarti-day-date{
-  margin:0 0 2px;
-  color:var(--saffron-dark);
-  font-size:.75rem;
-  font-weight:800;
-}
-.aarti-flats{
-  margin:0;
-  color:var(--maroon);
-  font-size:.92rem;
-  line-height:1.5;
-  font-weight:700;
-}
-@media(max-width:380px){
-  .aarti-dialog{padding-left:13px;padding-right:13px;}
-  .aarti-time-row span{font-size:.76rem;}
-  .aarti-day-card{grid-template-columns:50px 1fr;gap:9px;padding:10px;}
-  .aarti-day-number{width:44px;height:44px;font-size:1.15rem;}
-  .aarti-flats{font-size:.84rem;}
-}
-
-/* Final mobile-first hero refinement */
-.hero{
-  min-height:100svh;
-  min-height:100dvh;
-  padding:clamp(24px,5vh,64px) 14px;
-}
-.hero-inner{
-  width:min(100%,820px);
-}
+/* FINAL MOBILE-FIRST HERO + AARTI SECTION */
 .hero h1{
-  font-size:clamp(3rem,15vw,5.4rem);
-  line-height:1.04;
-  letter-spacing:-.025em;
-  white-space:normal;
+  font-size:clamp(2.8rem,12vw,5.2rem);
+  line-height:1.08;
 }
 .hero-actions{
-  flex-direction:row;
+  width:100%;
+  display:flex;
+  flex-direction:column;
   align-items:center;
-  justify-content:center;
-  gap:10px;
-  margin-top:clamp(24px,4vh,34px);
+  gap:9px;
+  margin-top:clamp(18px,3vh,30px);
 }
 .hero-actions .primary-btn,
 .hero-actions .secondary-btn{
-  width:auto;
+  width:min(100%,255px);
   min-height:46px;
   height:46px;
-  padding:0 17px;
-  font-size:.92rem;
+  margin:0;
+  padding:0 16px;
+  font-size:.94rem;
 }
 .hero-actions .primary-btn{
-  min-width:0;
+  border-width:1.5px;
 }
-.secondary-btn{
-  min-width:0;
+.hero-actions .secondary-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:7px;
+  border:1px solid rgba(249,229,150,.75);
+  border-radius:25px;
+  background:rgba(255,255,255,.09);
+  color:#fff8ee;
+  text-decoration:none;
+  backdrop-filter:blur(8px);
+}
+@media (max-width:680px){
+  .hero h1{
+    font-size:clamp(2.65rem,13.5vw,4.2rem);
+  }
+  .hero-actions .primary-btn,
+  .hero-actions .secondary-btn{
+    width:min(100%,250px);
+    min-height:44px;
+    height:44px;
+    font-size:.9rem;
+  }
+  .aarti-section{
+    padding:52px 0 60px;
+  }
+  .aarti-day-card{
+    align-items:flex-start;
+    padding:14px;
+    gap:12px;
+  }
+  .aarti-day-date{
+    min-width:58px;
+    padding-right:10px;
+  }
+  .aarti-day-date strong{
+    font-size:1.45rem;
+  }
+  .aarti-day-info h3{
+    font-size:.98rem;
+  }
+  .aarti-flat-list{
+    font-size:.86rem;
+    word-break:break-word;
+  }
+}
+@media (min-width:681px){
+  .hero-actions{
+    flex-direction:row;
+    justify-content:center;
+  }
+}
+
+
+/* COMBINED PROGRAMME + AARTI CARDS */
+.event-aarti{
+  margin-top:12px;
+  padding:10px 12px;
+  border-radius:10px;
+  background:#fff8eb;
+  border:1px solid #ead3ad;
+}
+.event-aarti-title{
+  color:var(--maroon);
+  font-size:.88rem;
+  font-weight:800;
+  margin-bottom:3px;
+}
+.event-aarti-flats{
+  color:var(--ink);
+  font-size:.82rem;
+  line-height:1.55;
+  font-weight:700;
 }
 @media(max-width:680px){
-  .hero{
-    padding:22px 12px 30px;
+  .event-aarti{
+    margin-top:10px;
+    padding:9px 10px;
   }
-  .hero-inner{
-    min-height:calc(100svh - 52px);
+  .event-aarti-title{
+    font-size:.82rem;
   }
-  .hero h1{
-    font-size:clamp(3rem,16.5vw,4.8rem);
-  }
-  .hero-actions{
-    width:100%;
-    flex-direction:row;
-    gap:8px;
-  }
-  .hero-actions .primary-btn,
-  .hero-actions .secondary-btn{
-    flex:1 1 0;
-    width:auto;
-    max-width:none;
-    padding:0 10px;
-    font-size:clamp(.78rem,3.35vw,.92rem);
-    white-space:nowrap;
+  .event-aarti-flats{
+    font-size:.77rem;
+    line-height:1.55;
   }
 }
-@media(max-width:360px){
-  .hero h1{font-size:clamp(2.65rem,16vw,3.7rem);}
-  .hero-actions .primary-btn,
-  .hero-actions .secondary-btn{
-    padding:0 7px;
-    font-size:.75rem;
+
+
+.hero-aarti-strip{
+  width:min(100%,360px);
+  margin-top:clamp(22px,4vh,32px);
+  padding:10px 12px;
+  display:flex;
+  justify-content:center;
+  gap:18px;
+  border-top:1px solid rgba(249,229,150,.45);
+  border-bottom:1px solid rgba(249,229,150,.45);
+  color:#f9e596;
+  font-size:.86rem;
+}
+.hero-aarti-strip div{
+  white-space:nowrap;
+}
+
+
+/* Polished Aarti information inside programme cards */
+.event-aarti{
+  margin-top:14px;
+  padding:12px 14px;
+  border-radius:12px;
+  background:linear-gradient(135deg,#fffaf0,#fff5e3);
+  border:1px solid #e8cfa8;
+}
+.event-aarti-title{
+  display:flex;
+  align-items:center;
+  gap:7px;
+  color:var(--maroon);
+  font-size:.9rem;
+  font-weight:800;
+  line-height:1.35;
+  margin-bottom:7px;
+}
+.event-aarti-flats{
+  color:var(--ink);
+  font-size:.86rem;
+  font-weight:700;
+  line-height:1.65;
+  letter-spacing:.01em;
+  word-break:normal;
+}
+@media(max-width:680px){
+  .event-aarti{
+    margin-top:11px;
+    padding:10px 11px;
+    border-radius:10px;
+  }
+  .event-aarti-title{
+    font-size:.82rem;
+    margin-bottom:5px;
+  }
+  .event-aarti-flats{
+    font-size:.78rem;
+    line-height:1.6;
+  }
+}
+
+
+.hero-aarti-strip{
+  width:min(100%,390px);
+  margin-top:clamp(20px,3.5vh,30px);
+  padding:12px 14px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:8px;
+  border:1px solid rgba(249,229,150,.42);
+  border-radius:14px;
+  background:rgba(0,0,0,.12);
+  backdrop-filter:blur(5px);
+  color:#f9e596;
+  font-size:.86rem;
+  line-height:1.45;
+}
+.hero-aarti-strip div{
+  white-space:normal;
+  text-align:center;
+}
+@media(max-width:430px){
+  .hero-aarti-strip{
+    grid-template-columns:1fr;
+    gap:5px;
+    width:min(100%,310px);
+    font-size:.84rem;
   }
 }
 
@@ -915,12 +972,12 @@ h1,h2,h3{font-family:"Noto Serif Gujarati",serif;line-height:1.25;margin:0}
         <h1>માર્વેલ લક્ઝરિયા<br><span>ગણેશોત્સવ</span></h1>
         <div class="hero-actions">
           <a class="primary-btn" href="#events">
-            <span>આગામી કાર્યક્રમો જુઓ</span>
-            <span style="font-size: 1.2rem;">↓</span>
+            <span>કાર્યક્રમ પત્રિકા જુઓ</span>
+            <span aria-hidden="true">↓</span>
           </a>
-          <button class="secondary-btn" type="button" onclick="openAartiModal()">
-            🪔 આરતી માહિતી
-          </button>
+        <div class="hero-aarti-strip">
+          <div>🌅 <strong>સવારની આરતી: ૮:૦૦ વાગ્યે</strong></div>
+          <div>🌆 <strong>સાંજની આરતી: ૭:૦૦ વાગ્યે</strong></div>
         </div>
       </div>
     </section>
@@ -938,23 +995,24 @@ h1,h2,h3{font-family:"Noto Serif Gujarati",serif;line-height:1.25;margin:0}
           </div>
           <div class="aarti-times">
             <div class="time-pill">
-              🌅 પ્રભાત આરતી: <span>સવારે ૮:૦૦ વાગ્યે</span>
+              🌅 સવારની આરતી: <span>સવારે ૮:૦૦ વાગ્યે</span>
             </div>
             <div class="time-pill">
-              🌆 સાયં આરતી: <span>સાંજે ૭:૦૦ વાગ્યે</span>
+              🌆 સાંજની આરતી: <span>સાંજે ૭:૦૦ વાગ્યે</span>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- EVENTS TIMELINE SECTION -->
+
+<!-- EVENTS TIMELINE SECTION -->
     <section id="events" class="events section">
       <div class="container">
         <div class="section-heading">
           <p class="eyebrow">આપણા ઉત્સવની ઉજવણી</p>
           <h2>ગણેશોત્સવ કાર્યક્રમ પત્રિકા</h2>
-          <p>આજથી આગળના કાર્યક્રમો અહીં આપમેળે દર્શાશે. પૂર્ણ થયેલા કાર્યક્રમો “પાછળના કાર્યક્રમો”માં જોવા મળશે.</p>
+          <p></p>
         </div>
 
         <!-- FILTER BUTTONS -->
@@ -975,7 +1033,13 @@ h1,h2,h3{font-family:"Noto Serif Gujarati",serif;line-height:1.25;margin:0}
           </article>
 
           <article class="event-card" data-category="competition" data-event-date="2026-09-14">
-            <div class="date-box"><strong>૧૪</strong><span>સપ્ટેમ્બર</span></div>
+            <div class="date-box"><strong>૧૪</strong><span>સપ્ટેમ્બર</span>
+              <div class="event-aarti" data-aarti-date="2026-09-14">
+                <div class="event-aarti-title">🪔 આરતી માહિતી</div>
+                <div class="event-aarti-flats">
+                  A-101, 102, 103&nbsp;&nbsp; • &nbsp;&nbsp;A-1103&nbsp;&nbsp; • &nbsp;&nbsp;B-101, 102, 103
+                </div>
+              </div></div>
             <div class="event-content">
               <p class="event-kicker">પ્રથમ દિવસ</p><h3>ચિત્રકામ સ્પર્ધા (Drawing)</h3>
               <p>બાળકો માટે સર્જનાત્મક ચિત્રકામ અને રંગપૂરણીની મજેદાર સ્પર્ધા.</p>
@@ -1137,93 +1201,10 @@ h1,h2,h3{font-family:"Noto Serif Gujarati",serif;line-height:1.25;margin:0}
     filterEvents('upcoming', upcomingBtn);
   }
 
-  // Daily Aarti flat schedule.
-  // Replace the values below with the confirmed society flat allocation.
-  const aartiSchedule = {
-    "2026-09-13": ["A-101, 102, 103", "A-1103", "B-101, 102, 103"],
-    "2026-09-14": ["A-101, 102, 103", "A-1103", "B-101, 102, 103"],
-    "2026-09-15": ["A-101, 102, 103", "A-1103", "B-101, 102, 103"],
-    "2026-09-16": ["A-101, 102, 103", "A-1103", "B-101, 102, 103"],
-    "2026-09-17": ["A-101, 102, 103", "A-1103", "B-101, 102, 103"],
-    "2026-09-18": ["A-101, 102, 103", "A-1103", "B-101, 102, 103"],
-    "2026-09-19": ["A-101, 102, 103", "A-1103", "B-101, 102, 103"],
-    "2026-09-20": ["A-101, 102, 103", "A-1103", "B-101, 102, 103"],
-    "2026-09-21": ["A-101, 102, 103", "A-1103", "B-101, 102, 103"],
-    "2026-09-22": ["A-101, 102, 103", "A-1103", "B-101, 102, 103"],
-    "2026-09-23": ["A-101, 102, 103", "A-1103", "B-101, 102, 103"],
-    "2026-09-24": ["A-101, 102, 103", "A-1103", "B-101, 102, 103"],
-    "2026-09-25": ["A-101, 102, 103", "A-1103", "B-101, 102, 103"]
-  };
-
-  const gujaratiDays = ["રવિવાર","સોમવાર","મંગળવાર","બુધવાર","ગુરુવાર","શુક્રવાર","શનિવાર"];
-  const gujaratiDigits = "૦૧૨૩૪૫૬૭૮૯";
-  function toGujaratiNumber(value){
-    return String(value).replace(/\d/g, d => gujaratiDigits[d]);
-  }
-
-  function renderAartiSchedule(){
-    const list = document.getElementById('aartiDayList');
-    if (!list) return;
-    const entries = Object.entries(aartiSchedule).sort((a,b) => a[0].localeCompare(b[0]));
-    list.innerHTML = entries.map(([iso, flats]) => {
-      const d = new Date(iso + "T00:00:00");
-      const day = toGujaratiNumber(d.getDate());
-      const weekday = gujaratiDays[d.getDay()];
-      return `<div class="aarti-day-card">
-        <div class="aarti-day-number">${day}</div>
-        <div>
-          <p class="aarti-day-date">${weekday} • ${day} સપ્ટેમ્બર</p>
-          <p class="aarti-flats">${flats.join(" • ")}</p>
-        </div>
-      </div>`;
-    }).join("");
-  }
-
-  function openAartiModal(){
-    renderAartiSchedule();
-    document.getElementById('aartiModal').classList.add('open');
-    document.body.style.overflow = 'hidden';
-  }
-
-  function closeAartiModal(event){
-    if (event && event.target !== event.currentTarget) return;
-    document.getElementById('aartiModal').classList.remove('open');
-    document.body.style.overflow = '';
-  }
-
-  document.addEventListener('keydown', function(e){
-    if (e.key === 'Escape') closeAartiModal();
-  });
-
   updateEventStatus();
+
 </script>
 
-<div class="aarti-modal" id="aartiModal" role="dialog" aria-modal="true" aria-labelledby="aartiModalTitle" onclick="closeAartiModal(event)">
-  <div class="aarti-dialog" onclick="event.stopPropagation()">
-    <div class="aarti-dialog-head">
-      <h2 id="aartiModalTitle">🪔 આરતી માહિતી</h2>
-      <button class="aarti-close" type="button" aria-label="Close" onclick="closeAartiModal()">×</button>
-    </div>
-
-    <div class="aarti-info-card">
-      <strong>🌅 પ્રભાત આરતી</strong>
-      <span>દરરોજ સવારે ૮:૦૦ વાગ્યે</span>
-    </div>
-
-    <div class="aarti-info-card">
-      <strong>🌆 સાયં આરતી</strong>
-      <span>દરરોજ સાંજે ૭:૦૦ વાગ્યે</span>
-    </div>
-
-    <div class="aarti-info-card">
-      <strong>🏠 ફ્લેટ / માળ પ્રમાણે આરતી</strong>
-      <ul class="aarti-flat-list" id="aartiFlatList">
-        <li>ફ્લેટ / માળની આરતીનું શેડ્યૂલ અહીં દર્શાવવામાં આવશે.</li>
-      </ul>
-      <p class="aarti-note">ફ્લેટ નંબર, માળ અને પરિવારના નામની ચોક્કસ માહિતી આપવામાં આવેલી નથી, તેથી અહીં કોઈ નામ/ફ્લેટ નંબર મનગમતો ઉમેરવામાં આવ્યો નથી.</p>
-    </div>
-  </div>
-</div>
 
 </body>
 </html>
